@@ -1,0 +1,98 @@
+<svg width="700" height="500" viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <!-- fundo do mapa: verde-claro (leaf-300) até verde-escuro (forest-600) -->
+    <linearGradient id="mapBg" x1="0%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%"  stop-color="#95D5B2"/>
+      <stop offset="42%" stop-color="#52B788"/>
+      <stop offset="100%" stop-color="#2D6A4F"/>
+    </linearGradient>
+
+    <radialGradient id="mapGlow" cx="78%" cy="12%" r="45%">
+      <stop offset="0%" stop-color="#FBF9F3" stop-opacity=".35"/>
+      <stop offset="100%" stop-color="#FBF9F3" stop-opacity="0"/>
+    </radialGradient>
+
+    <clipPath id="cardClip">
+      <rect x="0" y="0" width="700" height="500" rx="0"/>
+    </clipPath>
+
+    <clipPath id="thumbClipA">
+      <rect x="0" y="0" width="176" height="88" rx="0"/>
+    </clipPath>
+    <clipPath id="thumbClipB">
+      <rect x="0" y="0" width="156" height="80" rx="0"/>
+    </clipPath>
+
+    <filter id="cardShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0F2A1E" flood-opacity=".35"/>
+    </filter>
+  </defs>
+
+  <g clip-path="url(#cardClip)">
+
+    <!-- ===== fundo ===== -->
+    <rect x="0" y="0" width="700" height="500" fill="url(#mapBg)"/>
+    <rect x="0" y="0" width="700" height="500" fill="url(#mapGlow)"/>
+
+    <!-- ===== camadas de terreno ===== -->
+    <path d="M-30,230 C 140,150 230,270 370,210 S 610,120 730,220 V 500 H -30 Z" fill="#173A28" opacity=".5"/>
+    <path d="M-30,330 C 170,280 290,380 460,330 S 670,280 730,350 V 500 H -30 Z" fill="#1B4332" opacity=".7"/>
+
+    <!-- ===== rota tracejada ===== -->
+    <path d="M110,440 C 180,370 210,290 230,230 S 350,140 400,180 S 500,270 560,165"
+          fill="none" stroke="#FBF9F3" stroke-width="3" stroke-dasharray="1 12" stroke-linecap="round" opacity=".85"/>
+
+    <!-- ===== marcadores ===== -->
+    <circle cx="110" cy="440" r="14" fill="none" stroke="#FBF9F3" stroke-width="1.6" opacity=".55"/>
+    <circle cx="110" cy="440" r="7" fill="#FBF9F3" stroke="#173A28" stroke-width="1.8"/>
+
+    <circle cx="230" cy="230" r="14" fill="none" stroke="#FBF9F3" stroke-width="1.6" opacity=".55"/>
+    <circle cx="230" cy="230" r="7" fill="#C98F55" stroke="#173A28" stroke-width="1.8"/>
+
+    <circle cx="400" cy="180" r="14" fill="none" stroke="#FBF9F3" stroke-width="1.6" opacity=".55"/>
+    <circle cx="400" cy="180" r="7" fill="#FBF9F3" stroke="#173A28" stroke-width="1.8"/>
+
+    <circle cx="560" cy="165" r="14" fill="none" stroke="#FBF9F3" stroke-width="1.6" opacity=".55"/>
+    <circle cx="560" cy="165" r="7" fill="#C98F55" stroke="#173A28" stroke-width="1.8"/>
+
+    <!-- ===== selo do local ===== -->
+    <rect x="20" y="20" width="176" height="30" rx="0" fill="#0F2A1E" fill-opacity=".65"/>
+    <text x="38" y="40" font-family="IBM Plex Mono, monospace" font-size="12.5" letter-spacing=".5" fill="#FBF9F3">Serra da Bocaina, SP</text>
+
+    <!-- ===================== mini-cartão A ===================== -->
+    <g transform="translate(36,64) rotate(-3 98 78)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="196" height="156" rx="0" fill="#FBF9F3" stroke="#D8CDAF" stroke-width="1"/>
+      <g transform="translate(10,10)">
+        <g clip-path="url(#thumbClipA)">
+          <rect width="176" height="88" fill="#BFE3C9"/>
+          <circle cx="140" cy="22" r="12" fill="#F3D9A4"/>
+          <path d="M0,64 L34,32 L58,54 L92,22 L122,58 L150,38 L176,60 L176,88 L0,88 Z" fill="#2D6A4F"/>
+          <path d="M0,76 L28,54 L52,70 L82,48 L112,72 L142,58 L176,76 L176,88 L0,88 Z" fill="#173A28"/>
+        </g>
+        <rect x="150" y="8" width="20" height="18" rx="0" fill="#0F2A1E" fill-opacity=".6"/>
+        <text x="155" y="21" font-size="12">📍</text>
+      </g>
+      <text x="14" y="122" font-family="Fraunces, Georgia, serif" font-weight="600" font-size="16" fill="#173A28">Nascente do Rio Bonito</text>
+      <text x="14" y="142" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="#3E5347">12 fotos · ago 2025</text>
+    </g>
+
+    <!-- ===================== mini-cartão B ===================== -->
+    <g transform="translate(478,300) rotate(2.5 88 70)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="176" height="140" rx="0" fill="#FBF9F3" stroke="#D8CDAF" stroke-width="1"/>
+      <g transform="translate(10,10)">
+        <g clip-path="url(#thumbClipB)">
+          <rect width="156" height="80" fill="#F6DCB8"/>
+          <circle cx="122" cy="20" r="13" fill="#E9A24B"/>
+          <path d="M0,58 L28,32 L54,50 L78,24 L108,52 L156,34 L156,80 L0,80 Z" fill="#C98F55"/>
+          <path d="M0,70 L34,50 L62,64 L88,42 L120,66 L156,52 L156,80 L0,80 Z" fill="#1B4332"/>
+        </g>
+        <rect x="130" y="8" width="20" height="18" rx="0" fill="#0F2A1E" fill-opacity=".6"/>
+        <text x="135" y="21" font-size="12">📍</text>
+      </g>
+      <text x="14" y="112" font-family="Fraunces, Georgia, serif" font-weight="600" font-size="16" fill="#173A28">Mirante do Vale</text>
+      <text x="14" y="130" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="#3E5347">8 fotos · jan 2026</text>
+    </g>
+
+  </g>
+</svg>

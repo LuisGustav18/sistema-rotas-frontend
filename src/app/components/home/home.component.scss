@@ -1,0 +1,273 @@
+$cor-butao-criar: #131414;
+$cor-letra-entender: #ebe8e8;
+$cor-fundo-entender: #ffffff00;
+$cor-texto-descricao: #575454;
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--sand-050);
+
+  .hero {
+    background: linear-gradient(
+      180deg, 
+      var(--forest-950) 05%, 
+      var(--forest-800) 45%,
+      var(--forest-700) 100%);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .titulo {
+    font-family: var(--display);
+    font-size: clamp(38px, 4.6vw, 60px);
+    line-height: 1.00;
+    font-weight: 500;
+    letter-spacing: -.01em;
+  }
+
+  .hero span {
+    font-style: italic;
+    color: var(--leaf-300);
+    font-weight: 500;
+  }
+
+  .hero-content {
+    color: var(--sand-100);
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    position: relative;
+    z-index: 2;
+
+    padding: 90px 40px;
+  }
+  
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+
+  .mono {
+    font-family: var(--mono);
+    letter-spacing: -.01em;
+  }
+
+  .descricao {
+    font-size: 13.5px;
+    letter-spacing: -.01em;
+    color: $cor-texto-descricao;
+  }
+
+  .display {
+    font-family: var(--display);
+    font-size: 40px;
+  }
+
+  .pequeno {
+    width: 550px;
+    font-size: 20px;
+  }
+
+  .verde-escuro-letra {
+    color: var(--leaf-500);
+  }
+
+  .buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .buttons button {
+    padding: 22px 30px;
+    font-size: 15px;
+  }
+
+  .criar-conta {
+    color: $cor-butao-criar;
+    background: var(--leaf-500);
+    border: 1px solid var(--leaf-500);
+  }
+
+  .criar-conta:hover {
+    background: var(--leaf-300);
+  }
+
+  .entender {
+    border: 1px solid var(--leaf-500);
+    color: $cor-letra-entender;
+  }
+
+  .entender:hover {
+    color: var(--leaf-200);
+    border: 1px solid var(--leaf-200);
+    background: $cor-fundo-entender;
+  }
+
+  .verde-letra {
+    color: var(--leaf-300);
+  }
+
+  .verde-claro-letra {
+    color: var(--leaf-200);
+  }
+
+  .hero-text {
+    flex: 1;
+  }
+
+  .imagem {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .imagem img {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+
+    border: 8px white solid;
+    border-radius: 10px;
+    transform: rotate(3deg);
+  }
+
+  .hero-contours {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .16;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero-contours path {
+    fill: none;
+    stroke: var(--sand-100);
+    stroke-width: 1.4;
+  }
+
+  .marrom_branco {
+    width: 100%;
+    background: var(--sand-100);
+    padding: 80px 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .marrom_branco h1,
+  .marrom_branco p {
+    text-align: left;
+  }
+
+  .cards {
+    width: 100%;
+    max-width: 1200px;
+
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+  }
+
+  .pin {
+    max-width: 40px;
+    width: 100%;
+    height: 40px;
+  }
+
+  .card {
+    width: 320px;
+    background: var(--sand-050);
+    border-radius: 10px;
+    padding: 30px;
+    border: 1px solid var(--line);
+  }
+
+  .branco {
+    width: 100%;
+    background: var(--sand-050);
+    padding: 80px 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .branco > p,
+  .branco > h1 {
+    text-align: center;
+  }
+
+  .block {
+    width: 260px;
+    padding: 30px 24px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--sand-050);
+  }
+
+  .block h3 {
+    margin: 18px 0 10px;
+  }
+
+  .block p:first-child {
+    font-size: 32px;
+  }
+
+  .verde-selva {
+    width: 100%;
+    background: var(--forest-800);
+    padding: 40px 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mensagem {
+    font-style: italic;
+    font-family: var(--display);
+    font-size: 35px;
+    letter-spacing: -.02em;
+    line-height: 1.2;
+  } 
+
+  .verde-selva h1 {
+    text-align: center;
+    width: 550px;
+    color: var(--sand-050);
+    margin: 20px 0 0 0;
+  }
+
+  .verde-selva p  {
+    color: var(--leaf-300);
+    }
+
+  .menor {
+    font-size: 34px;
+    width: 550px;
+  }
+}
