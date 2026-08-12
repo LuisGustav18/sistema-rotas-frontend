@@ -1,0 +1,200 @@
+$cor-texto-direta: #252a25;
+
+.content {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+
+    .esquerda {
+        background: linear-gradient(180deg,
+                var(--forest-950) 05%,
+                var(--forest-800) 45%,
+                var(--forest-700) 100%);
+        width: 50%;
+        color: var(--sand-050);
+
+        .margem {
+            margin: 40px;
+        }
+
+        .hero-contours {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: .16;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-contours path {
+            fill: none;
+            stroke: var(--sand-100);
+            stroke-width: 1.4;
+        }
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            margin-bottom: 100px;
+
+            img {
+                width: 55px;
+                height: 55px;
+            }
+
+            h2 {
+                font-size: 40px;
+                font-family: var(--display);
+            }
+        }
+
+        .tamanho {
+            font-size: 20px;
+        }
+
+        .descricao {
+            font-size: 14px;
+            color: var(--leaf-300);
+            font-family: var(--mono);
+        }
+
+        h1 {
+            width: 340px;
+            font-size: 60px;
+            font-family: var(--display);
+            line-height: 70px;
+        }
+
+        p {
+            color: var(--leaf-200);
+        }
+    }
+
+    .direita {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        color: $cor-texto-direta;
+        background: var(--sand-050);
+        margin: 0 auto;
+
+        .meio {
+            align-items: center;
+            justify-content: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .entrada-texto {
+            font-family: var(--mono);
+            color: var(--leaf-300);
+            font-size: 20px;
+        }
+
+        h1 {
+            font-family: var(--display);
+            font-size: 50px;
+        }
+
+        .mensagem {
+            font-size: 19px;
+        }
+
+        .formulario {
+            width: 100%;
+        }
+
+        .insert {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .insert p {
+            margin: 20px 0 5px 0;
+            padding: 0;
+            font-size: 16px;
+            width: 100%;
+            font-family: var(--mono);
+        }
+
+        .insert mat-form-field {
+            margin: 0px;
+            padding: 0;
+            width: 100%;
+
+            border: 1px solid $cor-texto-direta;
+            border-radius: 12px;
+
+            ::ng-deep .mat-mdc-text-field-wrapper,
+            ::ng-deep .mat-mdc-form-field-flex,
+            ::ng-deep .mdc-text-field {
+                background-color: transparent !important;
+            }
+
+            ::ng-deep .mat-mdc-text-field-wrapper {
+                padding: 0 12px;
+            }
+
+            ::ng-deep .mdc-line-ripple::before,
+            ::ng-deep .mdc-line-ripple::after {
+                border-bottom: none !important;
+            }
+
+            ::ng-deep .mat-mdc-form-field-subscript-wrapper {
+                display: none !important;
+            }
+
+            ::ng-deep .mat-mdc-form-field-infix {
+                padding-top: 14px !important;
+                padding-bottom: 14px !important;
+                min-height: unset !important;
+            }
+        }
+
+        .insert:focus-within mat-form-field {
+            border-color: var(--leaf-500);
+        }
+
+        .insert:focus-within mat-icon {
+            color: var(--leaf-500);
+        }
+
+        .insert mat-icon {
+            color: $cor-texto-direta;
+        }
+
+        button {
+            color: $cor-texto-direta;
+            border-radius: 10px;
+            margin-top: 20px;
+            padding: 25px 0px;
+            font-size: 20px;
+            background: var(--leaf-500);
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: var(--leaf-300);
+        }
+
+        .criar-conta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 12px;
+            font-size: 19px;
+        }
+
+        .criar-conta a {
+            color: var(--forest-950);
+        }
+    }
+}
