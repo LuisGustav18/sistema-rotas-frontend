@@ -1,22 +1,22 @@
 <div class="header">
-<div class="body">
-    <div class="logo">
-        <img src="img/favicon.svg">
-        <h2>SistemaRotas</h2>
+    <div class="body">
+        <div class="logo">
+            <img src="img/favicon.svg">
+            <h2>SistemaRotas</h2>
+        </div>
+
+        <div class="duvida">
+            <button>Como funciona</button>
+
+            <button>O que dá pra fazer</button>
+        </div>
+
+        <div class="login">
+            <button matButton="outlined" class="entrar-conta" routerLink="/login">Entrar</button>
+
+            <button matButton="outlined" class="criar-conta" routerLink="/cadastro">Cadastrar</button>
+        </div>
     </div>
-
-    <div class="duvida">
-        <button>Como funciona</button>
-
-        <button>O que dá pra fazer</button>
-    </div>
-
-    <div class="login">
-        <button matButton="outlined" class="entrar-conta" routerLink="/login">Entrar</button>
-
-        <button matButton="outlined" class="criar-conta">Cadastrar</button>
-    </div>
-</div>
 </div>
 <div class="content">
     <router-outlet></router-outlet>
