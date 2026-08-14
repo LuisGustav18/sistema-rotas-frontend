@@ -1,1 +1,64 @@
-<p>cadastro works!</p>
+<div class="content">
+    <div class="esquerda">
+        <div class="margem">
+            <svg class="hero-contours" viewBox="0 0 1180 640" preserveAspectRatio="none">
+                <path d="M-50,120 C 200,60 400,180 650,110 S 1100,40 1250,140" />
+                <path d="M-50,220 C 220,150 420,260 660,200 S 1080,140 1250,240" />
+                <path d="M-50,320 C 240,260 440,350 680,290 S 1060,240 1250,330" />
+                <path d="M-50,420 C 260,370 460,440 700,390 S 1040,340 1250,420" />
+                <path d="M-50,520 C 280,480 480,530 720,490 S 1020,450 1250,520" />
+            </svg>
+
+            <div class="logo">
+                <img src="img/favicon.svg">
+                <h2>SistemaRotas</h2>
+            </div>
+
+            <h2 class="descricao">COMECE A GUARDAR SUAS VIAGENS</h2>
+
+            <h1>Cada rota que você faz merece ficar guardada</h1>
+
+            <p class="tamanho">Crie sua conta e comece a registrar destinos, fotos e o caminho de cada viagem.</p>
+        </div>
+    </div>
+
+    <div class="direita">
+        <div class="meio">
+            <p class="entrada-texto">CRIAR CONTA</p>
+            <h1>Vamos começar</h1>
+            <p class="mensagem">Leva menos de um minuto pra criar sua conta</p>
+            <div class="formulario">
+
+                <div class="insert">
+                <p>Nome completo</p>
+                <mat-form-field apparence="outlenet">
+                    <mat-icon matPrefix>person</mat-icon>
+                    <input matInput type="text" placeholder="Seu nome">
+                </mat-form-field>
+                </div>
+
+                <div class="insert">
+                <p>E-mail</p>
+                <mat-form-field apparence="outlenet">
+                    <mat-icon matPrefix>email</mat-icon>
+                    <input matInput type="email" placeholder="seu@email.com">
+                </mat-form-field>
+                </div>
+
+                <div class="insert">
+                <p>Senha</p>
+                <mat-form-field>
+                    <mat-icon matPrefix>lock</mat-icon>
+                    <input matInput type="password" placeholder="Crie uma senha">
+                </mat-form-field>
+                </div>
+            </div>
+
+            <button matButton class="criar-button">Criar conta</button>
+            <div class="login">
+                <p>Já tem conta?</p>
+                <button routerLink="/login">Entrar</button>
+            </div>
+        </div>
+    </div>
+</div>

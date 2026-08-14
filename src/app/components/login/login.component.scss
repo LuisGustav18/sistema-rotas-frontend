@@ -70,6 +70,7 @@ $cor-texto-direta: #252a25;
 
         p {
             color: var(--leaf-200);
+            width: 340px;
         }
     }
 
@@ -170,7 +171,7 @@ $cor-texto-direta: #252a25;
             color: $cor-texto-direta;
         }
 
-        button {
+        .entrar-button {
             color: $cor-texto-direta;
             border-radius: 10px;
             margin-top: 20px;
@@ -180,7 +181,7 @@ $cor-texto-direta: #252a25;
             width: 100%;
         }
 
-        button:hover {
+        .entrar-button:hover {
             background-color: var(--leaf-300);
         }
 
@@ -193,8 +194,15 @@ $cor-texto-direta: #252a25;
             font-size: 19px;
         }
 
-        .criar-conta a {
+        .criar-conta button {
             color: var(--forest-950);
+
+            background: none;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
         }
     }
 }
