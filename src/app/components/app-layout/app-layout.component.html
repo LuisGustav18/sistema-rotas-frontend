@@ -1,1 +1,20 @@
-<p>app-layout works!</p>
+<div class="header">
+    <div class="body">
+        <div class="logo">
+            <img src="img/favicon.svg">
+            <h2>SistemaRotas</h2>
+        </div>
+
+        <div class="campo">
+            <button class="button-menu" (click)="toggleMenu()"><mat-icon>menu</mat-icon></button>
+
+            <div class="menu-campo" [class.open]="menu">
+                <button *ngIf="!rotaProjeto">Projeto</button>
+                <button>Sair</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,107 @@
+$cor-butao-criar: #131414;
+$cor-letra-entender: #ebe8e8;
+$cor-fundo-entender: #ffffff00;
+$cor-fundo-hover: rgba(255, 255, 255, 0.1);
+$cor-fundo-hover-button: #f0efec;
+
+.header {
+    background: var(--forest-950);
+    width: 100%;
+}
+
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1350px;
+    margin: 0 auto;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+    }
+
+    img {
+        width: 25px;
+        height: 25px;
+    }
+
+    h2 {
+        color: var(--sand-050);
+        font-family: var(--display);
+    }
+
+    .campo {
+        display: flex;
+        gap: 10px;
+        position: relative;
+        display: inline-block;
+    }
+
+    .button-menu {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        color: var(--sand-050);
+        transition: background .15s ease;
+
+        &:hover {
+            background: $cor-fundo-hover;
+        }
+
+        mat-icon {
+            font-size: 24px;
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    .menu-campo {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        width: 180px;
+        background: var(--sand-050);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(-4px);
+        transition: opacity .15s ease, visibility .15s ease;
+
+        &.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        button {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-family: var(--display);
+            color: var(--forest-950);
+            cursor: pointer;
+            transition: background .15s ease;
+
+            &:hover {
+                background: var(--sand-100, $cor-fundo-hover-button);
+            }
+        }
+
+    }
+}
