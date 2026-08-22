@@ -1,1 +1,29 @@
-<p>projeto-list works!</p>
+<div class="container">
+    <div class="topo">
+        <div class="descricao">
+            <p class="texto-inicial">SEUS PROJETOS</p>
+            <h1>Meus projetos</h1>
+            <p class="quantidade">Projeto(s) registrado(s)</p>
+        </div>
+        <div class="button">
+            <button matButton>
+                + Novo projeto
+            </button>
+        </div>
+    </div>
+    <div class="baixo">
+        <div class="projeto">
+            <div class="projetos">
+                <img src="img/icone-projeto.svg">
+                <div>
+                    <p class="titulo">Titulo</p>
+                    <p class="data">12/08/2025</p>
+                </div>
+            </div>
+        </div>
+        <div class="mensagem" *ngIf="dado == false">
+            <img src="img/favicon.svg">
+            <p>Selecione um projeto na lista pra ver os detalhes e a rota</p>
+        </div>
+    </div>
+</div>

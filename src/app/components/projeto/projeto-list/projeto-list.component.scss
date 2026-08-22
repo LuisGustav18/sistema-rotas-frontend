@@ -1,0 +1,117 @@
+$cor-cinza-texto: #4f4f4f;
+$cor-texto-direta: #252a25;
+
+.container {
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background: var(--sand-050);
+
+    .topo {
+        width: 80%;
+        margin: 40px auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .texto-inicial {
+            font-family: var(--mono);
+            color: var(--forest-600);
+            font-size: 20px;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-family: var(--display);
+        }
+
+        .quantidade {
+            color: $cor-cinza-texto;
+            font-size: 19px;
+        }
+
+        button {
+            color: $cor-texto-direta;
+            border-radius: 30px;
+            margin-top: 20px;
+            padding: 25px 30px;
+            font-size: 20px;
+            background: var(--leaf-500);
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: var(--leaf-300);
+        }
+    }
+
+
+    .baixo {
+        display: flex;
+        margin: 0 auto;
+        width: 80%;
+        gap: 90px;
+        align-items: flex-start;
+
+        .titulo {
+            font-size: 22px;
+            font-family: var(--display);
+            margin: 5px 0 0 0;
+            font-weight: bold
+        }
+
+        .data {
+            font-size: 15px;
+            font-family: var(--mono);
+            margin: 5px 0 5px 0;
+            color: $cor-cinza-texto;
+        }
+
+        .projeto {
+            width: 30%;
+            border: 1px solid var(--sand-300);
+            padding: 15px 20px;
+            border-radius: 12px;
+            height: 550px;
+            height: 100%;
+
+            .projetos {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                border: 1px solid var(--sand-300);
+                padding: 10px 15px;
+                border-radius: 12px;
+            }
+        }
+
+        .mensagem {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            height: 550px;
+            max-height: 100%;
+
+            border: 1px solid var(--sand-300);
+            padding: 10px 15px;
+            border-radius: 12px;
+
+            align-items: center;
+            justify-content: center;
+
+            p {
+                font-size: 20px;
+                color: $cor-cinza-texto;
+                width: 360px;
+                letter-spacing: 2px;
+            }
+        }
+
+        img {
+            width: 60px;
+            height: 60px;
+        }
+    }
+}
