@@ -81,6 +81,7 @@ $cor-fundo-hover-button: #f0efec;
         transform: translate(-4px);
         transition: opacity .15s ease, visibility .15s ease;
 
+        // Faz o menu aparecer
         &.open {
             opacity: 1;
             visibility: visible;

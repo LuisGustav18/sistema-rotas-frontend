@@ -25,6 +25,7 @@ export class AppLayoutComponent {
     private elementRef: ElementRef
   ) {}
 
+  // Verificamos em todas as paginas se estamos em projeto ( para ocultar o campo )
   ngOnInit(){
     this.rotaProjeto = this.rotaProjetoVerificar();
     this.router.events.subscribe(() => {
@@ -32,17 +33,20 @@ export class AppLayoutComponent {
     })
   }
 
+  // Invertemos o sentido do valor atribuido dentro da varivel menu (true = false) (false = true)
   toggleMenu(): void {
     this.menu = !this.menu;
   }
 
-  @HostListener('document:click', ['$event'])
+  // Aqui verificamos o campo do html é se estamos clicando dentro do campo button do menu, onde pegamos o click do mouse é verificamos se ele está true, pra fechar
+  @HostListener('document:click', ['$event']) 
   onDocumentClick(event: MouseEvent): void {
     if (this.menu && !this.elementRef.nativeElement.contains(event.target)){
       this.menu = false;
     }
   }
 
+  // Verifico o caminho da url atual para ocultar o campo do menu 
   rotaProjetoVerificar(): boolean {
     return this.router.url === "/projeto";
   }
