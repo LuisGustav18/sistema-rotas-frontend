@@ -7,8 +7,7 @@
 
         <div class="campo">
             <button class="button-menu" (click)="toggleMenu()"><mat-icon>menu</mat-icon></button>
-
-            // class.open é uma classe dentro da div que estiliza ela mais apenas se estiver true ( por isso utilizo menu = boolean)
+            <!-- class.open é uma classe dentro da div que estiliza ela apenas quando menu é true -->
             <div class="menu-campo" [class.open]="menu">
                 <button *ngIf="!rotaProjeto">Projeto</button>
                 <button>Sair</button>

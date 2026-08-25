@@ -2,7 +2,6 @@ $cor-cinza-texto: #4f4f4f;
 $cor-texto-direta: #252a25;
 
 .container {
-
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -74,7 +73,7 @@ $cor-texto-direta: #252a25;
             border: 1px solid var(--sand-300);
             padding: 15px 20px;
             border-radius: 12px;
-            height: 550px;
+            max-height: 550px;
             height: 100%;
 
             .projetos {

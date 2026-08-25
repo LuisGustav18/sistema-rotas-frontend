@@ -13,8 +13,11 @@ $cor-fundo-hover-button: #f0efec;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 1350px;
+
+    width: 100%;
+    max-width: 1350px;
     margin: 0 auto;
+    box-sizing: border-box;
 
     .logo {
         display: flex;
@@ -33,10 +36,7 @@ $cor-fundo-hover-button: #f0efec;
     }
 
     .campo {
-        display: flex;
-        gap: 10px;
         position: relative;
-        display: inline-block;
     }
 
     .button-menu {

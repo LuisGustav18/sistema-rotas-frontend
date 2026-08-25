@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { ProjetoListComponent } from './components/projeto/projeto-list/projeto-list.component';
 import { AppLayoutComponent } from './components/app-layout/app-layout.component';
+import { RotaListComponent } from './components/rota/rota-list/rota-list.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: 'full' }, // Rediciona quando o caminho estiver apenas vazio para home
@@ -18,5 +19,6 @@ export const routes: Routes = [
 
     { path: "", component: AppLayoutComponent, children: [
         { path:'projeto', component:ProjetoListComponent },
+        { path:'rota', component:RotaListComponent }
     ]}
 ];

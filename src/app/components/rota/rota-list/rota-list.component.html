@@ -1,1 +1,19 @@
-<p>rota-list works!</p>
+<div class="container">
+    <div class="divisor">
+        <div class="descricao">
+            <p class="texto-inicial">ROTA DO PROJETO</p>
+            <h1>Titulo</h1>
+            <p class="mensagem">Clique no mapa pra marcar um novo ponto da rota.</p>
+        </div>
+        <div class="rota">
+            <div *ngIf="listaVazia" class="lista-rotas">
+                <img src="img/favicon.svg">
+                <p>Nenhum ponto ainda.</p>
+                <p>Clique no mapa pra começar.</p>
+            </div>
+            <div #mapContainer class="mapa">
+
+            </div>
+        </div>
+    </div>
+</div>
