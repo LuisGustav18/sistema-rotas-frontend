@@ -1,1 +1,46 @@
-<p>rota-create works!</p>
+<div class="container">
+    <div class="descricao">
+        <p class="texto-inicial">NOVO PONTO</p>
+        <h1>Marcar ponto da rota</h1>
+        <p class="mensagem">Conte o que rolou nesse trecho</p>
+    </div>
+
+    <div class="insert">
+        <p>Titulo</p>
+        <mat-form-field apparence="outline">
+            <mat-icon matPrefix>book_2</mat-icon>
+            <input matInput type="text" placeholder="Ex: Nascente do Rio Branco">
+        </mat-form-field>
+    </div>
+
+    <div class="insert descricao-input">
+        <p>Descricao</p>
+        <mat-form-field apparence="outline">
+            <textarea matInput placeholder="O que aconteceu por aqui..." rows="4"></textarea>
+        </mat-form-field>
+    </div>
+
+    <div class="insert">
+        <p>Data do local</p>
+        <mat-form-field apparence="outline">
+            <mat-icon matPrefix>calendar_today</mat-icon>
+            <input matInput type="date" placeholder="Adicionar fotos">
+        </mat-form-field>
+    </div>
+
+    <div class="insert">
+        <div class="campo-fotos">
+            <label for="fotos" class="button-upload">
+                <mat-icon>upload</mat-icon>
+                <span>Adicionar fotos</span>
+            </label>
+
+            <input id="fotos" type="file" accept="image/*" multiple (change)="onFileSelected($event)">
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button class="cancelar" matButton="outlined">Cancelar</button>
+        <button class="criar-rota" matButton="outlined" routerLink="/cadastro">Salvar ponto</button>
+    </div>
+</div>

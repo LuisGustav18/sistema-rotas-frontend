@@ -1,0 +1,187 @@
+$cor-texto-direta: #252a25;
+$cor-cinza-texto: #4f4f4f;
+$cor-butao-criar: #131414;
+$cor-letra-entender: #ebe8e8;
+$cor-fundo-entender: #ffffff00;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--sand-300);
+    border-radius: 20px;
+    margin: 0 auto;
+    max-width: 500px;
+    width: 100%;
+    padding: 45px 35px;
+
+    .descricao {
+
+        .texto-inicial {
+            font-family: var(--mono);
+            color: var(--forest-600);
+            font-size: 17px;
+        }
+
+        h1 {
+            font-size: 25px;
+            font-family: var(--display);
+        }
+
+        .mensagem {
+            color: $cor-cinza-texto;
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+    }
+
+    .insert {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .insert p {
+        margin: 20px 0 5px 0;
+        padding: 0;
+        font-size: 16px;
+        width: 100%;
+        font-weight: bold;
+        font-family: var(--mono);
+    }
+
+    .insert mat-form-field {
+        margin: 0px;
+        padding: 0;
+        width: 100%;
+
+
+        border: 1px solid var(--sand-300);
+        border-radius: 12px;
+
+        ::ng-deep .mat-mdc-text-field-wrapper,
+        ::ng-deep .mat-mdc-form-field-flex,
+        ::ng-deep .mdc-text-field {
+            background-color: transparent !important;
+        }
+
+        ::ng-deep .mat-mdc-text-field-wrapper {
+            padding: 0 12px;
+        }
+
+        ::ng-deep .mdc-line-ripple::before,
+        ::ng-deep .mdc-line-ripple::after {
+            border-bottom: none !important;
+        }
+
+        ::ng-deep .mat-mdc-form-field-subscript-wrapper {
+            display: none !important;
+        }
+
+        ::ng-deep .mat-mdc-form-field-infix {
+            padding-top: 14px !important;
+            padding-bottom: 14px !important;
+            min-height: unset !important;
+        }
+    }
+
+    .insert:focus-within mat-form-field {
+        border-color: var(--leaf-500);
+    }
+
+    .insert-textarea mat-form-field {
+        ::ng-deep textarea.mat-mdc-input-element {
+            resize: none;
+            min-height: 100px;
+            line-height: 1.5;
+            padding-top: 4px;
+        }
+    }
+
+    .insert:focus-within mat-icon {
+        color: var(--leaf-500);
+    }
+
+    .insert mat-icon {
+        color: $cor-texto-direta;
+    }
+
+    .campo-fotos {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        border: 1px solid var(--sand-300);
+        border-radius: 20px;
+        padding: 10px 0px;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+            background-color: var(--sand-100);
+            border-color: var(--leaf-500);
+        }
+    }
+    
+
+    .button-upload {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        border-radius: 10;
+        color: $cor-texto-direta;
+        cursor: pointer;
+
+        mat-icon {
+            font-size: 30px;
+            width: 30px;
+            height: 30px;
+            transition: 0.2s;
+        }
+
+        span {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+    
+    input[type="file"] {
+        display: none;
+    }
+    
+
+    .buttons {
+        display: flex;
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .buttons button {
+        padding: 22px 30px;
+        font-size: 15px;
+        width: 100%;
+    }
+
+    .criar-rota {
+        color: $cor-butao-criar;
+        background: var(--leaf-500);
+        border: 1px solid var(--forest-800);
+    }
+
+    .criar-rota:hover {
+        background: var(--leaf-300);
+    }
+
+    .cancelar {
+        border: 1px solid var(--sand-300);
+        color: $cor-texto-direta;
+    }
+
+    .cancelar:hover {
+        border: 1px solid var(--leaf-300);
+        background: var(--sand-100);
+    }
+}
