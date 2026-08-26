@@ -21,7 +21,6 @@ export const routes: Routes = [
     { path: "", component: AppLayoutComponent, children: [
         { path:'projeto', component:ProjetoListComponent },
         { path:'rota', component:RotaListComponent },
-        { path:'testes', component:RotaCreateComponent}
     ]},
 
 
