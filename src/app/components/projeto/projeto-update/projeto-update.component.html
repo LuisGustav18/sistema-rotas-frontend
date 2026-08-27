@@ -1,1 +1,27 @@
-<p>projeto-update works!</p>
+<div class="container">
+    <div class="descricao">
+        <p class="texto-inicial">ATUALIZAR PROJETO</p>
+        <h1>Projeto</h1>
+    </div>
+
+    <div class="insert">
+        <p>Titulo</p>
+        <mat-form-field apparence="outline">
+            <mat-icon matPrefix>book_2</mat-icon>
+            <input matInput type="text" placeholder="Ex: Trilha Serra da Bocaina">
+        </mat-form-field>
+    </div>
+
+    <div class="insert">
+        <p>Data de inicio</p>
+        <mat-form-field apparence="outline">
+            <mat-icon matPrefix>calendar_today</mat-icon>
+            <input matInput type="date" placeholder="Adicionar fotos">
+        </mat-form-field>
+    </div>
+
+    <div class="buttons">
+        <button class="cancelar" matButton="outlined">Cancelar</button>
+        <button class="criar-rota" matButton="outlined" routerLink="/cadastro">Salvar</button>
+    </div>
+</div>
