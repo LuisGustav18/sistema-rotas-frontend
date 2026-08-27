@@ -8,6 +8,7 @@ import { AppLayoutComponent } from './components/app-layout/app-layout.component
 import { RotaListComponent } from './components/rota/rota-list/rota-list.component';
 import { RotaCreateComponent } from './components/rota/rota-create/rota-create.component';
 import { ProjetoCreateComponent } from './components/projeto/projeto-create/projeto-create.component';
+import { RotaUpdateComponent } from './components/rota/rota-update/rota-update.component';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: 'full' }, // Rediciona quando o caminho estiver apenas vazio para home
