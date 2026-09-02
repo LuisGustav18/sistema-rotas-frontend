@@ -33,7 +33,7 @@
                 <p>E-mail</p>
                 <mat-form-field apparence="outlenet">
                     <mat-icon matPrefix>email</mat-icon>
-                    <input matInput type="email" placeholder="seu@email.com">
+                    <input matInput [formControl]="email" required name="email" type="email" placeholder="seu@email.com">
                 </mat-form-field>
                 </div>
 
@@ -41,12 +41,13 @@
                 <p>Senha</p>
                 <mat-form-field>
                     <mat-icon matPrefix>lock</mat-icon>
-                    <input matInput type="password" placeholder="Sua senha">
+                    <input matInput [formControl]="senha" required name="senha" type="password" placeholder="Sua senha">
                 </mat-form-field>
                 </div>
+                <p class="mensagem-error" *ngIf="erro">{{ messagemErro }}</p>
             </div>
 
-            <button matButton class="entrar-button">Entrar</button>
+            <button matButton class="entrar-button" [disabled]="!validarCampos()" (click)="login()">Entrar</button>
             <div class="criar-conta">
                 <p>Ainda não tem conta?</p>
                 <button routerLink="/cadastro">Criar conta</button>

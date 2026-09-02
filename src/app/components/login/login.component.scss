@@ -1,4 +1,5 @@
 $cor-texto-direta: #252a25;
+$cor-mensagem-error: rgba(158, 45, 26, 0.941);
 
 .content {
     display: flex;
@@ -123,6 +124,14 @@ $cor-texto-direta: #252a25;
             font-size: 16px;
             width: 100%;
             font-family: var(--mono);
+        }
+
+        .mensagem-error {
+            font-size: 15px;
+            width: 100%;
+            font-family: var(--mono);
+            color: $cor-mensagem-error;
+            margin: 5px 0 5px 0;
         }
 
         .insert mat-form-field {
