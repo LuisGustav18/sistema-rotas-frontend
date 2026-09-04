@@ -30,18 +30,10 @@
             <div class="formulario">
 
                 <div class="insert">
-                <p>Nome completo</p>
-                <mat-form-field apparence="outlenet">
-                    <mat-icon matPrefix>person</mat-icon>
-                    <input matInput type="text" placeholder="Seu nome">
-                </mat-form-field>
-                </div>
-
-                <div class="insert">
                 <p>E-mail</p>
                 <mat-form-field apparence="outlenet">
                     <mat-icon matPrefix>email</mat-icon>
-                    <input matInput type="email" placeholder="seu@email.com">
+                    <input matInput [formControl]="email" required type="email" placeholder="seu@email.com">
                 </mat-form-field>
                 </div>
 
@@ -49,12 +41,12 @@
                 <p>Senha</p>
                 <mat-form-field>
                     <mat-icon matPrefix>lock</mat-icon>
-                    <input matInput type="password" placeholder="Crie uma senha">
+                    <input matInput [formControl]="senha" required type="password" placeholder="Crie uma senha">
                 </mat-form-field>
                 </div>
             </div>
 
-            <button matButton class="criar-button">Criar conta</button>
+            <button matButton class="criar-button" [disabled]="!validarCampos()" (click)="create()">Criar conta</button>
             <div class="login">
                 <p>Já tem conta?</p>
                 <button routerLink="/login">Entrar</button>

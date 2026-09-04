@@ -7,6 +7,7 @@ import { ProjetoListComponent } from './components/projeto/projeto-list/projeto-
 import { AppLayoutComponent } from './components/app-layout/app-layout.component';
 import { RotaListComponent } from './components/rota/rota-list/rota-list.component';
 import { authGuard } from './auth/auth-guard';
+import { guestGuard } from './auth/guest-guard';
 
 export const routes: Routes = [
     { path: "", redirectTo: 'home', pathMatch: 'full' }, // Rediciona quando o caminho estiver apenas vazio para home
@@ -16,8 +17,8 @@ export const routes: Routes = [
         ]
     },
 
-    { path: "login", component: LoginComponent },
-    { path: "cadastro", component: CadastroComponent },
+    { path: "login", component: LoginComponent, canActivate: [guestGuard] },
+    { path: "cadastro", component: CadastroComponent, canActivate: [guestGuard] },
 
     { path: "", component: AppLayoutComponent, canActivate: [authGuard], children: [
         { path:'projeto', component:ProjetoListComponent },
