@@ -6,24 +6,46 @@
             <p class="quantidade">Projeto(s) registrado(s)</p>
         </div>
         <div class="button">
-            <button matButton routerLink="/rota">
+            <button matButton routerLink="/rota" (click)="criarProjeto()">
                 + Novo projeto
             </button>
         </div>
     </div>
     <div class="baixo">
         <div class="projeto">
-            <div class="projetos">
-                <img src="img/icone-projeto.svg">
-                <div>
-                    <p class="titulo">Titulo</p>
-                    <p class="data">12/08/2025</p>
-                </div>
+            <div class="vazio" *ngIf="dado == true">
+                <mat-icon>book_2</mat-icon>
+                <p>Nenhum projeto ainda</p>
+            </div>
+            <div class="projetos" *ngFor="let projeto of listaProjetos">
+                <button (click)="lerProjeto(projeto)">
+                    <img src="img/icone-projeto.svg">
+                    <div>
+                        <p class="titulo">{{projeto.titulo}}</p>
+                        <p class="data">{{projeto.data}}</p>
+                    </div>
+                </button>
             </div>
         </div>
-        <div class="mensagem" *ngIf="dado == false">
+        <div class="mensagem" *ngIf="projeto === null">
             <img src="img/favicon.svg">
             <p>Selecione um projeto na lista pra ver os detalhes e a rota</p>
+        </div>
+        <div class="mensagem desalinhado" *ngIf="projeto !== null">
+            <div class="titulo-desalinhado">
+                <div>
+                    <p class="titulo-dado">PROJETO</p>
+                    <h1>{{projeto.titulo}}</h1>
+                    <p class="data" *ngIf="projeto.data != null">Início em {{projeto.data}}</p>
+                    <p class="data" *ngIf="projeto.data == null">Sem data</p>
+                </div>
+                <div>
+                    <button class="icone" (click)="atualizarProjeto()"><mat-icon>edit</mat-icon></button>
+                    <button class="icone" (click)="deletarProjeto()"><mat-icon>delete</mat-icon></button>
+                </div>
+            </div>
+            <img src="img/mapa.jpeg">
+            <button class="ver-projeto">Ver rotas de projeto</button>
         </div>
     </div>
 </div>

@@ -3,6 +3,8 @@ $cor-cinza-texto: #4f4f4f;
 $cor-butao-criar: #131414;
 $cor-letra-entender: #ebe8e8;
 $cor-fundo-entender: #ffffff00;
+$cor-mensagem-error: rgba(158, 45, 26, 0.941);
+$cor-button-disabled: #52b788b1;
 
 .container {
     display: flex;
@@ -10,8 +12,7 @@ $cor-fundo-entender: #ffffff00;
     border: 1px solid var(--sand-300);
     border-radius: 20px;
     margin: 0 auto;
-    max-width: 500px;
-    width: 100%;
+    width: 450px;
     padding: 45px 35px;
 
     .descricao {
@@ -100,6 +101,14 @@ $cor-fundo-entender: #ffffff00;
         color: $cor-texto-direta;
     }
 
+    .mensagem-error {
+        font-size: 15px;
+        width: 100%;
+        font-family: var(--mono);
+        color: $cor-mensagem-error;
+        margin: 5px 0 5px 0;
+    }
+
     .campo-fotos {
         width: 100%;
         display: flex;
@@ -135,6 +144,10 @@ $cor-fundo-entender: #ffffff00;
         color: $cor-butao-criar;
         background: var(--leaf-500);
         border: 1px solid var(--forest-800);
+    }
+
+    .criar-rota:disabled {
+        background: $cor-button-disabled;
     }
 
     .criar-rota:hover {

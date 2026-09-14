@@ -1,7 +1,7 @@
 <div class="container">
     <div class="descricao">
         <p class="texto-inicial">NOVO PROJETO</p>
-        <h1>Criar projeto</h1>
+        <h1>Projeto</h1>
         <p class="mensagem">Dê um nome e data em que essa viagem começou</p>
     </div>
 
@@ -9,7 +9,7 @@
         <p>Titulo</p>
         <mat-form-field apparence="outline">
             <mat-icon matPrefix>book_2</mat-icon>
-            <input matInput type="text" placeholder="Ex: Trilha Serra da Bocaina">
+            <input matInput [formControl]="titulo" required type="text" placeholder="Ex: Trilha Serra da Bocaina">
         </mat-form-field>
     </div>
 
@@ -17,12 +17,14 @@
         <p>Data de inicio</p>
         <mat-form-field apparence="outline">
             <mat-icon matPrefix>calendar_today</mat-icon>
-            <input matInput type="date" placeholder="Adicionar fotos">
+            <input matInput [formControl]="data" type="date" placeholder="Adicionar fotos">
         </mat-form-field>
     </div>
 
+    <p class="mensagem-error" *ngIf="erro == true">{{mensagemErro}}</p>
+
     <div class="buttons">
-        <button class="cancelar" matButton="outlined">Cancelar</button>
-        <button class="criar-rota" matButton="outlined" routerLink="/cadastro">Criar projeto</button>
+        <button class="cancelar" matButton="outlined" (click)="fechar()" >Cancelar</button>
+        <button class="criar-rota" matButton="outlined" (click)="create()" [disabled]="!validarCampos()">Criar projeto</button>
     </div>
 </div>

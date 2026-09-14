@@ -8,7 +8,7 @@
         <p>Titulo</p>
         <mat-form-field apparence="outline">
             <mat-icon matPrefix>book_2</mat-icon>
-            <input matInput type="text" placeholder="Ex: Trilha Serra da Bocaina">
+            <input [formControl]="titulo" name="titulo" matInput type="text" placeholder="Ex: Trilha Serra da Bocaina">
         </mat-form-field>
     </div>
 
@@ -16,12 +16,14 @@
         <p>Data de inicio</p>
         <mat-form-field apparence="outline">
             <mat-icon matPrefix>calendar_today</mat-icon>
-            <input matInput type="date" placeholder="Adicionar fotos">
+            <input [formControl]="data" name="data" matInput type="date" placeholder="Adicionar fotos">
         </mat-form-field>
     </div>
 
+    <p class="mensagem-error" *ngIf="erro == true">{{mensagemErro}}</p>
+
     <div class="buttons">
-        <button class="cancelar" matButton="outlined">Cancelar</button>
-        <button class="criar-rota" matButton="outlined" routerLink="/cadastro">Salvar</button>
+        <button class="cancelar" matButton="outlined" (click)="cancelar()">Cancelar</button>
+        <button class="criar-rota" matButton="outlined" [disabled]="!validarCampos()" (click)="update()">Salvar</button>
     </div>
 </div>

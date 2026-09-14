@@ -1,5 +1,6 @@
 $cor-cinza-texto: #4f4f4f;
 $cor-texto-direta: #252a25;
+$cor-icone: #111010b6;
 
 .container {
     display: flex;
@@ -33,9 +34,9 @@ $cor-texto-direta: #252a25;
 
         button {
             color: $cor-texto-direta;
-            border-radius: 30px;
+            border-radius: 7px;
             margin-top: 20px;
-            padding: 25px 30px;
+            padding: 30px 35px;
             font-size: 20px;
             background: var(--leaf-500);
             width: 100%;
@@ -50,9 +51,9 @@ $cor-texto-direta: #252a25;
     .baixo {
         display: flex;
         margin: 0 auto;
-        width: 80%;
-        gap: 90px;
-        align-items: flex-start;
+        width: 100%;
+        gap: 25px;
+        justify-content: center;
 
         .titulo {
             font-size: 22px;
@@ -69,12 +70,35 @@ $cor-texto-direta: #252a25;
         }
 
         .projeto {
-            width: 30%;
+            width: 430px;
+            max-height: 550px;
+            overflow-y: auto;
+            overflow-x: hidden;
             border: 1px solid var(--sand-300);
             padding: 15px 20px;
-            border-radius: 12px;
-            max-height: 550px;
-            height: 100%;
+            border-radius: 10px;
+            box-sizing: border-box;
+
+            .vazio {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                mat-icon {
+                    color: var(--leaf-300);
+                    margin: 30px 0 0 0;
+                    font-size: 50px;
+                    height: 50px;
+                    width: 50px;
+                }
+
+                p {
+                    color: $cor-cinza-texto;
+                    font-size: 20px;
+                    margin: 5px 0 30px 0;
+                }
+            }
 
             .projetos {
                 display: flex;
@@ -83,6 +107,23 @@ $cor-texto-direta: #252a25;
                 border: 1px solid var(--sand-300);
                 padding: 10px 15px;
                 border-radius: 12px;
+                width: 100%;
+                box-sizing: border-box;
+                margin-bottom: 5px;
+                min-width: 0;
+            }
+
+            .projetos button {
+                all: unset;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                width: 100%;
+            }
+
+            .projeto .data {
+                margin: 5px 0 0 0;
             }
         }
 
@@ -94,7 +135,7 @@ $cor-texto-direta: #252a25;
             max-height: 100%;
 
             border: 1px solid var(--sand-300);
-            padding: 10px 15px;
+            padding: 10px 25px;
             border-radius: 12px;
 
             align-items: center;
@@ -106,6 +147,72 @@ $cor-texto-direta: #252a25;
                 width: 360px;
                 letter-spacing: 2px;
             }
+        }
+
+        .desalinhado {
+            align-items: flex-start;
+            justify-content: flex-start;
+            margin: 5px;
+
+            .titulo-desalinhado {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .titulo-dado {
+                font-family: var(--mono);
+                color: var(--forest-600);
+                font-size: 16px;
+            }
+
+            h1 {
+                font-size: 35px;
+                font-family: var(--display);
+                margin: 25px 0 12px 0;
+            }
+
+            .data {
+                color: $cor-cinza-texto;
+                font-size: 15px;
+                margin: 0 0 25px 0;
+            }
+
+            .icone {
+                background: none;
+                border: 1px solid var(--sand-300);
+                border-radius: 50px;
+                padding: 8px 9.5px;
+                margin: 10px 0 0 20px;
+                cursor: pointer;
+            }
+
+            .icone mat-icon {
+                color: $cor-icone;
+                font-weight: bold;
+            }
+
+            img {
+                width: 100%;
+                height: 320px;
+                border-radius: 5px;
+            }
+
+            .ver-projeto {
+                background: var(--leaf-500);
+                width: 100%;
+                color: var(--forest-800);
+                border: none;
+                margin-top: 20px;
+                padding: 18px 25px;
+                font-size: 20px;
+                font-weight: bold;
+                border-radius: 40px;
+                text-align: left;
+                box-sizing: border-box;
+            }
+
+
         }
 
         img {
