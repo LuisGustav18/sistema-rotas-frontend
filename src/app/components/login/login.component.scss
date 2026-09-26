@@ -1,5 +1,6 @@
 $cor-texto-direta: #252a25;
 $cor-mensagem-error: rgba(158, 45, 26, 0.941);
+$cor-button-disabled: #52b788b1;
 
 .content {
     display: flex;
@@ -201,6 +202,10 @@ $cor-mensagem-error: rgba(158, 45, 26, 0.941);
             gap: 6px;
             margin-top: 12px;
             font-size: 19px;
+        }
+
+        .criar-conta:disabled {
+            background: $cor-button-disabled;
         }
 
         .criar-conta button {

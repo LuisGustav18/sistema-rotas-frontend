@@ -3,19 +3,21 @@ $cor-cinza-texto: #4f4f4f;
 $cor-butao-criar: #131414;
 $cor-letra-entender: #ebe8e8;
 $cor-fundo-entender: #ffffff00;
+$cor-fundo-deletar: rgba(255, 255, 255, 0.9);
+$cor-deletar-button: rgba(181, 34, 34, 0.777);
 
 .container {
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--sand-300);
     border-radius: 20px;
     margin: 0 auto;
-    max-width: 500px;
-    width: 100%;
+    width: 550px;
+    max-width: 100%;
     padding: 45px 35px;
+    max-height: 80vh;
+    box-sizing: border-box;
 
     .descricao {
-
         .texto-inicial {
             font-family: var(--mono);
             color: var(--forest-600);
@@ -125,7 +127,6 @@ $cor-fundo-entender: #ffffff00;
         }
     }
     
-
     .button-upload {
         display: flex;
         flex-direction: row;
@@ -147,7 +148,59 @@ $cor-fundo-entender: #ffffff00;
             font-weight: bold;
         }
     }
-    
+
+    .lista-imagens {
+        display: flex;
+        gap: 12px;
+        margin-top: 15px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 8px;
+    }
+
+    .imagem {
+        position: relative;
+        flex: 0 0 120px;
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        display: block;
+        
+    }
+
+    .imagem img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .deletar-imagem {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        background: $cor-fundo-deletar;
+        color: $cor-deletar-button;
+        cursor: pointer;
+    }
+
+    .deletar-imagem mat-icon {
+        font-size: 18px;
+        width: 18px;
+        height: 18px;
+    }
+
+    .deletar-imagem:hover {
+        background: $cor-deletar-button;
+        color: var(--sand-050);
+    }
+
     input[type="file"] {
         display: none;
     }
@@ -156,7 +209,8 @@ $cor-fundo-entender: #ffffff00;
     .buttons {
         display: flex;
         gap: 20px;
-        margin-top: 40px;
+        margin-top: 20px;
+        padding-bottom: 45px;
     }
 
     .buttons button {

@@ -1,5 +1,8 @@
 $cor-texto-direta: #252a25;
-$cor-cinza-texto: #4f4f4f;
+$cor-cinza-texto: #4f4f4fe3;
+$cor-deletar-button: rgba(181, 34, 34, 0.777);
+$cor-editar-button: rgba(29, 148, 29, 0.777);
+$cor-fundo-icone: #3f6249;
 
 .container {
     width: 100%;
@@ -35,19 +38,33 @@ $cor-cinza-texto: #4f4f4f;
 
     .rota {
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
         gap: 20px;
     }
 
-    .lista-rotas {
-        width: 25%;
-        border: 1px solid var(--sand-300);
-        border-radius: 20px;
+    .lista {
         display: flex;
         flex-direction: column;
+        width: 450px;
+        height: 600px;
+        overflow-y: auto;
+        padding-right: 8px;
+        box-sizing: border-box;
+    }
+
+    .lista-rotas {
+        display: flex;
         align-items: center;
-        padding: 30px 10px;
+        flex-direction: column;
+        width: 100%;
+        border: 1px solid var(--sand-300);
+        border-radius: 20px;
+        padding: 40px 20px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        min-width: 0;
 
         img {
             width: 50px;
@@ -62,11 +79,136 @@ $cor-cinza-texto: #4f4f4f;
         }
     }
 
+    .lista-rotas-dados {
+        width: 100%;
+        border: 1px solid var(--sand-300);
+        border-radius: 20px;
+        padding: 2px 20px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        min-width: 0;
+
+        h1 {
+            background: var(--leaf-500);
+            padding: 22px 25px;
+            border-radius: 12px;
+        }
+
+        .dados {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            .divisoria {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-between;
+
+                .texto-rota {
+                    min-width: 0;
+                    flex: 1;
+
+                    .titulo {
+                        font-weight: bold;
+                        font-size: 17px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    .descricao {
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                    }
+
+                    p {
+                        color: $cor-cinza-texto;
+                        font-family: var(--body);
+                        font-size: 15px;
+                        margin: 0 0 2px 0;
+                        overflow-wrap: anywhere;
+                    }
+                }
+            }
+        }
+
+        .lista-imagens {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding-bottom: 8px;
+
+            img {
+                position: relative;
+                flex: 0 0 120px;
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+                display: block;
+            }
+        }
+
+        .icones {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+
+            button {
+                border-radius: 15px;
+                background: none;
+                color: $cor-cinza-texto;
+                cursor: pointer;
+                border: 1px solid var(--sand-300);
+            }
+
+            .editar:hover {
+                border: 1.3px solid $cor-editar-button;
+            }
+
+            .deletar:hover {
+                border: 1.3px solid $cor-deletar-button;
+            }
+        }
+    }
+
     .mapa {
         height: 600px;
         flex: 1;
         margin-right: 20px;
         border: 1px solid var(--sand-300);
         border-radius: 20px;
+    }
+
+    ::ng-deep .marcador-rota {
+        background: transparent;
+        border: none;
+    }
+
+    ::ng-deep .ponteiro {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50% 50% 50% 0;
+        background: $cor-fundo-icone;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        transform: rotate(-45deg);
+    }
+
+    ::ng-deep .ponteiro span {
+        transform: rotate(45deg);
+        color: white;
+        font-size: 10px;
+        font-weight: bold;
     }
 }

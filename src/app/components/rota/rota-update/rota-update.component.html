@@ -8,14 +8,15 @@
         <p>Titulo</p>
         <mat-form-field apparence="outline">
             <mat-icon matPrefix>book_2</mat-icon>
-            <input matInput type="text" placeholder="Ex: Nascente do Rio Branco">
+            <input [formControl]="titulo" name="titulo" matInput type="text" placeholder="Ex: Nascente do Rio Branco">
         </mat-form-field>
     </div>
 
     <div class="insert descricao-input">
         <p>Descricao</p>
         <mat-form-field apparence="outline">
-            <textarea matInput placeholder="O que aconteceu por aqui..." rows="4"></textarea>
+            <textarea [formControl]="descricao" name="descricao" matInput placeholder="O que aconteceu por aqui..."
+                rows="4"></textarea>
         </mat-form-field>
     </div>
 
@@ -23,7 +24,7 @@
         <p>Data do local</p>
         <mat-form-field apparence="outline">
             <mat-icon matPrefix>calendar_today</mat-icon>
-            <input matInput type="date" placeholder="Adicionar fotos">
+            <input [formControl]="data" name="data" matInput type="date" placeholder="Adicionar fotos">
         </mat-form-field>
     </div>
 
@@ -34,12 +35,39 @@
                 <span>Adicionar fotos</span>
             </label>
 
-            <input id="fotos" type="file" accept="image/*" multiple (change)="onFileSelected($event)">
+            <input id="fotos" type="file" accept="image/*" multiple (change)="eventoArquivoSelecionado($event)">
+
+        </div>
+    </div>
+
+    <div class="imagem-upload" *ngIf="rota.imagens?.length > 0">
+        <span>Uploads salvos</span>
+        <div class="lista-imagens-upload">
+            <div class="imagens" *ngFor="let imagem of rota.imagens">
+                <img [src]="imagem.url" alt="imagem que usario mandou em rota">
+
+                <button class="deletar-imagem" type="button" (click)="removerImagemSalva(imagem)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="imagem-salvar" *ngIf="arquivosSelecionados.length > 0">
+        <span>Novos uploads</span>
+        <div class="lista-imagens" *ngIf="arquivosSelecionados.length > 0">
+            <div class="imagem" *ngFor="let arquivo of arquivosSelecionados; let i = index">
+                <img [src]="previews[i]" [alt]="arquivo.name">
+
+                <button class="deletar-imagem" type="button" (click)="removerImagem(i)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
         </div>
     </div>
 
     <div class="buttons">
-        <button class="cancelar" matButton="outlined">Cancelar</button>
-        <button class="criar-rota" matButton="outlined" routerLink="/cadastro">Salvar</button>
+        <button class="cancelar" matButton="outlined" (click)="fechar()">Cancelar</button>
+        <button class="criar-rota" matButton="outlined" (click)="update()">Salvar</button>
     </div>
 </div>

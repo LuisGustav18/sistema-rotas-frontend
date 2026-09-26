@@ -8,6 +8,7 @@ import { ProjetoCreateComponent } from '../projeto-create/projeto-create.compone
 import { MatIcon } from '@angular/material/icon';
 import { ProjetoUpdateComponent } from '../projeto-update/projeto-update.component';
 import { ProjetoDeleteComponent } from '../projeto-delete/projeto-delete.component';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-projeto-list',
@@ -15,7 +16,8 @@ import { ProjetoDeleteComponent } from '../projeto-delete/projeto-delete.compone
     CommonModule,
     MatButtonModule,
     MatDialogModule,
-    MatIcon
+    MatIcon,
+    RouterModule
   ],
   templateUrl: './projeto-list.component.html',
   styleUrl: './projeto-list.component.scss',
@@ -30,7 +32,8 @@ export class ProjetoListComponent {
   constructor(
     private service: ProjetoService,
     private dialog: MatDialog,
-    private cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -91,5 +94,11 @@ export class ProjetoListComponent {
       this.cd.detectChanges();
     }
     )
+  }
+
+  public entrarProjeto(){
+    if (this.projeto) {
+      this.router.navigate(['/rota/' + this.projeto.id])
+    }
   }
 }

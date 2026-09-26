@@ -22,6 +22,6 @@ export const routes: Routes = [
 
     { path: "", component: AppLayoutComponent, canActivate: [authGuard], children: [
         { path:'projeto', component:ProjetoListComponent },
-        { path:'rota', component:RotaListComponent },
+        { path:'rota/:id', component:RotaListComponent },
     ]},
 ];

@@ -2,14 +2,42 @@
     <div class="divisor">
         <div class="descricao">
             <p class="texto-inicial">ROTA DO PROJETO</p>
-            <h1>Titulo</h1>
+            <h1>{{projeto?.titulo || 'Titulo'}}</h1>
             <p class="mensagem">Clique no mapa pra marcar um novo ponto da rota.</p>
         </div>
         <div class="rota">
-            <div *ngIf="listaVazia" class="lista-rotas">
-                <img src="img/favicon.svg">
-                <p>Nenhum ponto ainda.</p>
-                <p>Clique no mapa pra começar.</p>
+            <div class="lista">
+                <div *ngIf="listagemVazia" class="lista-rotas">
+                    <img src="img/favicon.svg">
+                    <p>Nenhum ponto ainda.</p>
+                    <p>Clique no mapa pra começar.</p>
+                </div>
+
+                <div class="lista-rotas-dados" *ngFor="let rota of rotas; let i = index">
+                    <div class="dados">
+                        <h1>{{ i + 1 }}</h1>
+                        <div class="divisoria">
+                            <div class="texto-rota">
+                                <p class="titulo">{{rota.titulo || 'Sem titulo'}}</p>
+                                <p class="descricao">{{rota.descricao || 'Sem descrição'}}</p>
+                                <p>{{rota.data || 'Sem data'}}</p>
+                            </div>
+                            <div class="icones">
+                                <button class="editar" (click)="update(rota)">
+                                    <mat-icon>edit</mat-icon>
+                                </button>
+                                <button class="deletar" (click)="delete(rota)">
+                                    <mat-icon>delete</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lista-imagens">
+                        <div class="imagens" *ngFor="let imagem of rota.imagens">
+                            <img [src]="imagem.url" alt="imagem que usario mandou em rota">
+                        </div>
+                    </div>
+                </div>
             </div>
             <div #mapContainer class="mapa">
 

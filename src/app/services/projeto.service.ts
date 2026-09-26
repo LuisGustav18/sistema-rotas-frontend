@@ -11,7 +11,9 @@ export class ProjetoService {
     private http = inject(HttpClient);
 
     public findById(id: UUIDTypes): Observable<Projeto> {
-        return this.http.get<Projeto>(`${API_CONFIG.baseUrl}/projetos/${id}`)
+        return this.http.get<Projeto>(`${API_CONFIG.baseUrl}/projetos/${id}`, {
+            withCredentials: true
+        })
     }
 
     public findbyUsuario(): Observable<Projeto[]>{

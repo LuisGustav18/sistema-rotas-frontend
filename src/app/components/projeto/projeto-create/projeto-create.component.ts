@@ -45,6 +45,7 @@ export class ProjetoCreateComponent {
 
   public create() {
     this.projeto.titulo = this.titulo.value ?? '';
+    
     if (this.data.value) {
       this.projeto.data = this.formatarData(this.data.value);
     }

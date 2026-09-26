@@ -1,1 +1,12 @@
-<p>rota-delete works!</p>
+<div class="container">
+    <div class="descricao">
+        <p class="texto-inicial">DELETAR ROTA</p>
+        <h1>Ponto de rota</h1>
+        <p class="mensagem">Vai mesmo apagar essa rota?</p>
+    </div>
+
+    <div class="buttons">
+        <button class="cancelar" matButton="outlined" (click)="fechar()">Cancelar</button>
+        <button class="criar-rota" matButton="outlined" (click)="deletar()">Confirmar</button>
+    </div>
+</div>
